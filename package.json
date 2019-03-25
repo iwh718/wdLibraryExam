@@ -1,0 +1,28 @@
+{
+  "name": "wdLibraryExam",
+  "version": "1.1.1",
+  "description": "文达图书馆知识小测试",
+  "main": "index.js",
+  "author": "iwh",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "scripts": {
+    "gyA": "babel ./dev -d ./release",
+    "pregyA": "echo begin babel...",
+    "postgyA": "browserify ./release/App.js -o ./bundle.js"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  }
+}
