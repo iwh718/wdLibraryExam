@@ -34,6 +34,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 /**
  * 主程序
+ * @author IWH
+ * QQ:2868579699
+ * 文达学院图书馆入学引导小测试！
  */
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
@@ -70,7 +73,7 @@ var App = function (_React$Component) {
         key: "__callback_begin",
         value: function __callback_begin() {
             console.log('重新做题！！');
-            _stores2.default.rightSum = [];
+            _stores2.default.errorSum = [];
             _stores2.default.currentQuestionIndex = 0;
             _stores2.default.componentsStatus = [true, false, false];
             this.setState({
@@ -127,8 +130,8 @@ var App = function (_React$Component) {
                     { className: "index_footer" },
                     " ",
                     _react2.default.createElement(
-                        "p",
-                        { className: "index_footer_text" },
+                        "a",
+                        { href: "http://wendaedu.com.cn/tsg/m/", target: "_blank", className: "index_footer_text" },
                         " \u6587\u8FBE\u5B66\u9662\u56FE\u4E66\u9986 "
                     ),
                     _react2.default.createElement(

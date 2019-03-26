@@ -1,5 +1,6 @@
 body{
     margin: 0;
+
    
 
 }
@@ -85,7 +86,7 @@ body{
 .index_footer{
     position: fixed;
     width: 100%;
-    bottom: 15%;
+    bottom: 10%;
 
     left: 0;
     text-align: center;
@@ -108,4 +109,102 @@ body{
 .radio{
     margin-top: 10px;
     padding: 10px;
+}
+/**
+结算部分
+ */
+.scores_box{
+    margin-top: 30px;
+    background-color:#ffffff ;
+    width: 80%;
+    padding: 5%;
+    margin-left: 10%;
+
+    -webkit-box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1) ;
+    -moz-box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1) ;
+
+}
+.scores_title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+.scores_tips{
+    width: 100%;
+    text-align: center;
+
+}
+
+.errors_item p{
+    background: #c32533;
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+/**
+解析
+ */
+
+.answer_title{
+    width: 100%;
+    text-align: center;
+}
+.answer_r{
+    width: 100%;
+    text-align: center;
+}
+.close_btn{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    background: #c32533;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+}
+.close_btn:hover{
+    background: #931b19;
+}
+.close_box{
+    text-align: center;
+    width: 100%;
+}
+.answer_r{
+    color: rgba(0, 0, 0, 0.73);
+}
+.more_tips{
+    color: #416fc1;
+}
+.index_footer_text{
+    color: #ffffff;
+}
+.index_footer_text:visited{
+    color: #fff;
+}
+.rotate{
+    -webkit-animation-name: logo;
+    -moz-animation-name: logo;
+    -o-animation-name: logo;
+    animation-name: logo;
+    animation-delay: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function:linear;
+    animation-fill-mode: forwards;
+    animation-duration:4s;
+}
+@keyframes logo {
+ from{
+     transform: translateY(0) translateX(0);
+ }
+    to{
+        transform: translateY(500px) translateX(100px) ;
+    }
+
 }

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * 初始化题目数据与全局参数
  */
+
 var initData = {
     //题目
     questions: [{
@@ -154,7 +155,12 @@ var initData = {
     //组件状态
     componentsStatus: [true, false, false],
     //正确的题号
-    rightSum: []
+    errorSum: []
 
 };
+//随机出题
+initData.questions.sort(function () {
+    return 0.5 - Math.random();
+});
+//console.log(initData.questions);
 exports.default = initData;

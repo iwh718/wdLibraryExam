@@ -3,7 +3,7 @@
  */
 import * as React from "react";
 import stores from './stores';
-import $ from 'jquery';
+
 
 class QuestionsList extends React.Component {
     constructor(props) {
@@ -25,13 +25,12 @@ class QuestionsList extends React.Component {
         console.log(e.target.value);
         if(e.target.value !== this.state.cur['R']){
             console.log('回答错误！');
+            stores.errorSum.push(this.state.currentQuestionIndex);
             console.log('正确答案为：'+ this.state.cur['R'])
-        }else{
-            console.log('回答正确！');
-            stores.rightSum.push(this.state.cur['id'])
         }
         console.log('下一题目');
         ++stores.currentQuestionIndex;
+        /** stores.questions.length -1 **/
         if(stores.currentQuestionIndex > stores.questions.length -1 ){
             console.log('题目做完了！');
             this.props.callback_over();
@@ -41,7 +40,7 @@ class QuestionsList extends React.Component {
         }
 
         let tmp = {
-            rightSum:stores.rightSum,
+            errorSum:stores.errorSum,
             currentQuestionIndex:stores.currentQuestionIndex,
             questions: stores.questions,
             cur: stores.questions[stores.currentQuestionIndex]

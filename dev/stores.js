@@ -1,6 +1,8 @@
 /**
  * 初始化题目数据与全局参数
  */
+
+
 const initData = {
     //题目
     questions:[
@@ -155,9 +157,12 @@ const initData = {
         false
     ],
     //正确的题号
-    rightSum:[
+    errorSum:[
 
     ]
 
 };
+//随机出题
+initData.questions.sort(()=>0.5 - Math.random());
+//console.log(initData.questions);
 export default initData

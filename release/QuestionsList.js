@@ -14,10 +14,6 @@ var _stores = require('./stores');
 
 var _stores2 = _interopRequireDefault(_stores);
 
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -56,13 +52,12 @@ var QuestionsList = function (_React$Component) {
             console.log(e.target.value);
             if (e.target.value !== this.state.cur['R']) {
                 console.log('回答错误！');
+                _stores2.default.errorSum.push(this.state.currentQuestionIndex);
                 console.log('正确答案为：' + this.state.cur['R']);
-            } else {
-                console.log('回答正确！');
-                _stores2.default.rightSum.push(this.state.cur['id']);
             }
             console.log('下一题目');
             ++_stores2.default.currentQuestionIndex;
+            /** stores.questions.length -1 **/
             if (_stores2.default.currentQuestionIndex > _stores2.default.questions.length - 1) {
                 console.log('题目做完了！');
                 this.props.callback_over();
@@ -72,7 +67,7 @@ var QuestionsList = function (_React$Component) {
             }
 
             var tmp = {
-                rightSum: _stores2.default.rightSum,
+                errorSum: _stores2.default.errorSum,
                 currentQuestionIndex: _stores2.default.currentQuestionIndex,
                 questions: _stores2.default.questions,
                 cur: _stores2.default.questions[_stores2.default.currentQuestionIndex]
@@ -81,7 +76,7 @@ var QuestionsList = function (_React$Component) {
             this.setState(tmp, function () {
                 //清楚单选，给用户留下缓冲
                 setTimeout(function () {
-                    (0, _jquery2.default)('input[type=radio][name="optionsRadios"]:checked').prop("checked", false);
+                    $('input[type=radio][name="optionsRadios"]:checked').prop("checked", false);
                 }, 200);
             });
         }

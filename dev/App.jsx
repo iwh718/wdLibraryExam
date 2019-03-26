@@ -6,6 +6,9 @@ import ScoresCard from "./ScoresCard";
 
 /**
  * 主程序
+ * @author IWH
+ * QQ:2868579699
+ * 文达学院图书馆入学引导小测试！
  */
 class App extends React.Component{
     constructor(props){
@@ -33,7 +36,7 @@ class App extends React.Component{
     }
     __callback_begin(){
         console.log('重新做题！！');
-        stores.rightSum = [];
+        stores.errorSum = [];
         stores.currentQuestionIndex = 0;
         stores.componentsStatus = [true,false,false];
         this.setState({
@@ -58,7 +61,7 @@ class App extends React.Component{
                     <div className="btn_exam" onClick={this.__beginExam}>开始答题！</div>
                 </header>
 
-                <footer className="index_footer"> <p className="index_footer_text"> 文达学院图书馆 </p><p> IWH 2019.03.25|| V1.0</p> </footer>
+                <footer className="index_footer"> <a href="http://wendaedu.com.cn/tsg/m/" target="_blank" className="index_footer_text"> 文达学院图书馆 </a><p> IWH 2019.03.25|| V1.0</p> </footer>
             </div>
         )
     }
